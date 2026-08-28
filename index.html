@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio By AI {Longevity Edition}</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 4px solid #2c3e50;
+            border-top: 4px solid #2c3e50;
+            margin-bottom: 30px;
+            background: #fff;
+        }
+        .logo-container {
+            flex: 1;
+        }
+        .logo {
+            max-height: 100px;
+            padding-left: 20px;
+        }
+        .title-container {
+            flex: 2;
+            text-align: center;
+        }
+        .title-container h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .title-container .edition {
+            font-weight: bold; 
+            color: #34495e; 
+            margin-top: 5px;
+            font-size: 1.4em;
+        }
+        .date-container {
+            flex: 1;
+            text-align: right;
+            padding-right: 20px;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        .newspaper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .story-card {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .story-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+        .story-card h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+        .story-card h2 a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .story-card h2 a:hover {
+            text-decoration: underline;
+        }
+        .snippet {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .read-more {
+            display: inline-block;
+            font-weight: bold;
+            color: #3498db;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+        .read-more:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="./logo.jpg" alt="Bio By AI Logo" class="logo">
+        </div>
+        <div class="title-container">
+            <h1>Bio By AI</h1>
+            <div class="edition">{Longevity Edition}</div>
+        </div>
+        <div class="date-container">
+            <div>August 28, 2026</div>
+            
+            <div style="margin-top: 10px;">
+                <select onchange="if (this.value) window.location.href=this.value;" style="padding: 5px; font-family: 'Georgia', serif; border-radius: 4px; border: 1px solid #ccc;">
+                    <option value="">Previous Editions...</option>
+                    
+                        <option value="./editions/2026-08-28/index.html">2026-08-28</option>
+                    
+                </select>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="newspaper-grid">
+        
+        
+        <div class="story-card">
+            
+            <a href="story_0.html">
+                <!-- Ensure correct pathing when on the same directory level -->
+                <img src="./images/story_0_1787953420.jpg" alt="Infographic" class="story-img">
+            </a>
+            
+            <h2><a href="story_0.html">The Metabolic Metropolis: How a New Optical Technology Maps the Cellular Identity and Energy of Aging Tissues</a></h2>
+            <div class="snippet">
+                <strong>Why it matters:</strong> REDCAT bridges the gap between spatial proteomics and label-free metabolomics, allowing drug developers to visually track how specific cells shift their energy profiles during aging and disease. This technology is poised to revolutionize target validation and spatial-biology-driven drug discovery for age-related metabolic decline.
+            </div>
+            <a href="story_0.html" class="read-more">Read Full Story →</a>
+        </div>
+        
+        
+        
+        <div class="story-card">
+            
+            <a href="story_1.html">
+                <!-- Ensure correct pathing when on the same directory level -->
+                <img src="./images/story_1_1787953451.jpg" alt="Infographic" class="story-img">
+            </a>
+            
+            <h2><a href="story_1.html">Rebuilding the Engine of Youth: How a Molecular Switch Rejuvenates the Aging Gut</a></h2>
+            <div class="snippet">
+                <strong>Why it matters:</strong> This research reveals a novel, targetable SIRT6/RXRα/Retinoic Acid pathway that drives intestinal stem cell exhaustion during aging. Furthermore, it identifies Atractylenolide II as a highly potent small molecule capable of reversing this decline, offering a promising therapeutic target to combat leaky gut and systemic inflammaging.
+            </div>
+            <a href="story_1.html" class="read-more">Read Full Story →</a>
+        </div>
+        
+        
+        
+        <div class="story-card">
+            
+            <a href="story_2.html">
+                <!-- Ensure correct pathing when on the same directory level -->
+                <img src="./images/story_2_1787953482.jpg" alt="Infographic" class="story-img">
+            </a>
+            
+            <h2><a href="story_2.html">The Zombie Roadblocks of the Brain: How a Single Genetic Switch Rejuvenates Stroke-Damaged Blood Vessels</a></h2>
+            <div class="snippet">
+                <strong>Why it matters:</strong> By identifying Arhgap31 as a genetic master-switch driving endothelial senescence, this study uncovers a highly druggable, high-precision target to reverse vascular aging and actively rebuild brain plumbing after a stroke, shifting the longevity paradigm from simple 'zombie cell' clearance to active tissue rejuvenation.
+            </div>
+            <a href="story_2.html" class="read-more">Read Full Story →</a>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
