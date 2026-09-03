@@ -192,8 +192,164 @@ class ResearchFetcher:
             logger.warning(f"Error fetching from PLOS: {e}")
             return []
 
+    def fetch_manual_links(self):
+        import os
+        from bs4 import BeautifulSoup
+        
+        manual_file = "manual_links.txt"
+        if not os.path.exists(manual_file):
+            return []
+            
+        logger.info("Fetching manually provided links and PMIDs...")
+        with open(manual_file, "r") as f:
+            lines = f.readlines()
+            
+        papers = []
+        pmids = []
+        
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+                
+            if line.isdigit():
+                pmids.append(line)
+            elif line.startswith("http"):
+                # Handle generic URL
+                try:
+                    logger.info(f"Scraping manual URL: {line}")
+                    # Use a standard user-agent to bypass basic blocks
+                    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+                    resp = requests.get(line, headers=headers, timeout=10)
+                    resp.raise_for_status()
+                    
+                    soup = BeautifulSoup(resp.text, 'html.parser')
+                    scraped_title = soup.title.string if soup.title else "Manually Curated Article"
+                    
+                    # Extract text from paragraphs
+                    paragraphs = soup.find_all('p')
+                    scraped_text = " ".join([p.get_text() for p in paragraphs])
+                    scraped_text = scraped_text[:4000] + ("..." if len(scraped_text) > 4000 else "")
+                    
+                    final_title = scraped_title.strip()
+                    final_abstract = scraped_text.strip()
+                    journal = "Web Source"
+                    url = line
+                    
+                    # AI Research to find the primary paper
+                    import os
+                    try:
+                        from google import genai
+                    except ImportError:
+                        genai = None
+                        
+                    api_key = os.environ.get("GEMINI_API_KEY")
+                    if genai and api_key:
+                        client = genai.Client(api_key=api_key)
+                        prompt = f"""
+                        Read this scraped text from a web article. 
+                        Identify the primary scientific research publication being discussed.
+                        Return ONLY a valid JSON object with this structure:
+                        {{
+                          "is_news_article": boolean,
+                          "pubmed_search_query": "AuthorLastName AND Keywords",
+                          "summary": "Summary of findings"
+                        }}
+                        Text: {scraped_title}
+                        {scraped_text}
+                        """
+                        try:
+                            ai_resp = client.models.generate_content(model="gemini-3.5-flash", contents=prompt)
+                            cleaned_text = ai_resp.text.strip()
+                            if cleaned_text.startswith("```json"): cleaned_text = cleaned_text[7:]
+                            if cleaned_text.endswith("```"): cleaned_text = cleaned_text[:-3]
+                            
+                            ai_data = json.loads(cleaned_text)
+                            
+                            if ai_data.get("is_news_article") and ai_data.get("pubmed_search_query"):
+                                logger.info(f"AI identified it as news. Searching PubMed for: {ai_data['pubmed_search_query']}")
+                                # Hit PubMed eSearch
+                                search_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+                                search_params = {"db": "pubmed", "term": ai_data['pubmed_search_query'], "retmode": "json", "retmax": 1}
+                                search_resp = requests.get(search_url, params=search_params).json()
+                                id_list = search_resp.get("esearchresult", {}).get("idlist", [])
+                                
+                                if id_list:
+                                    logger.info(f"Found matching primary paper on PubMed: {id_list[0]}")
+                                    fetch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+                                    fetch_params = {"db": "pubmed", "id": id_list[0], "retmode": "xml"}
+                                    fetch_resp = requests.get(fetch_url, params=fetch_params)
+                                    root = ET.fromstring(fetch_resp.text)
+                                    for article in root.findall(".//PubmedArticle"):
+                                        pmid = article.find(".//PMID").text
+                                        title = article.find(".//ArticleTitle").text
+                                        abstract_elem = article.find(".//AbstractText")
+                                        pubmed_abstract = abstract_elem.text if abstract_elem is not None else ""
+                                        
+                                        # Combine the original news context with the primary paper context
+                                        final_title = title
+                                        final_abstract = f"[Primary Paper Abstract]: {pubmed_abstract}\n\n[Original News Context]: {ai_data.get('summary', '')}"
+                                        journal = article.find(".//Title").text
+                                        url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+                                        break
+                        except Exception as ai_e:
+                            logger.warning(f"AI research failed for URL {line}: {ai_e}")
+                            
+                    papers.append({
+                        "source": "Manual Link (Researched)",
+                        "title": final_title,
+                        "abstract": final_abstract,
+                        "journal": journal,
+                        "url": url,
+                        "date": self.end_date.isoformat(),
+                        "manual_override": True,
+                        "original_news_url": line if url != line else None
+                    })
+                except Exception as e:
+                    logger.warning(f"Failed to scrape URL {line}: {e}")
+                    
+        # Handle PMIDs if any were provided
+        if pmids:
+            fetch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+            fetch_params = {
+                "db": "pubmed",
+                "id": ",".join(pmids),
+                "retmode": "xml"
+            }
+            try:
+                fetch_resp = requests.get(fetch_url, params=fetch_params)
+                fetch_resp.raise_for_status()
+                
+                root = ET.fromstring(fetch_resp.text)
+                for article in root.findall(".//PubmedArticle"):
+                    pmid = article.find(".//PMID").text
+                    title = article.find(".//ArticleTitle").text
+                    
+                    abstract_elem = article.find(".//AbstractText")
+                    abstract = abstract_elem.text if abstract_elem is not None else "No abstract provided."
+                    journal = article.find(".//Title").text
+                    
+                    papers.append({
+                        "source": "Manual PMID",
+                        "title": title,
+                        "abstract": abstract,
+                        "journal": journal,
+                        "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
+                        "date": self.end_date.isoformat(),
+                        "manual_override": True
+                    })
+            except Exception as e:
+                logger.warning(f"Error fetching manual PMIDs: {e}")
+                
+        # Clear the file
+        with open(manual_file, "w") as f:
+            f.write("# Paste URLs or PubMed IDs here, one per line.\n")
+            
+        return papers
+
     def run(self):
         papers = []
+        papers.extend(self.fetch_manual_links())
         papers.extend(self.fetch_pubmed())
         papers.extend(self.fetch_biorxiv())
         papers.extend(self.fetch_medrxiv())

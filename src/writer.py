@@ -30,17 +30,22 @@ class AIWriter:
         3. Content: Explain the core discovery (mechanism of action) and the broader implications for the longevity field seamlessly within the narrative.
         4. Citations: Since we are writing a story about a single paper, do NOT use inline citation numbers (like [1]) in the text. However, you MUST provide a robust "Citations" section at the end to prevent hallucinations.
         
-        Output format should be a JSON object with:
-        - "headline": Catchy but accurate headline.
-        - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Include the inline citations here.
-        - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>).
-        - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
-        
         Paper Title: {paper['title']}
         Journal: {paper['journal']}
         URL: {paper['url']}
         Abstract: {paper['abstract']}
         Editor's Note: {paper.get('editor_reasoning', '')}
+        """
+        
+        if paper.get('original_news_url'):
+            prompt += f"\nOriginal News Source: {paper['original_news_url']}"
+            
+        prompt += """
+        Output format should be a JSON object with:
+        - "headline": Catchy but accurate headline.
+        - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
+        - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Include the inline citations here.
+        - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>). Include both the primary paper and the original news source if applicable.
         """
         
         try:
