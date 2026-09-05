@@ -106,8 +106,9 @@
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">← Back to Front Page</a>
+    <div class="nav" style="display: flex; justify-content: space-between;">
+        <a href="{{ root_path }}/index.html">← Back to Front Page</a>
+        <a href="{{ root_path }}/graph.html">🧠 Knowledge Graph</a>
     </div>
     <div class="header">
         <img src="{{ root_path }}/logo.jpg" alt="Logo" class="logo">
@@ -128,6 +129,12 @@
         
         <div class="content">
             {{ paper.story.html_body | safe }}
+            
+            {% if paper.story.kg_insights %}
+            <div class="kg-insights" style="margin-top: 20px; padding: 15px; background-color: #f0f7fb; border-left: 4px solid #3498db;">
+                {{ paper.story.kg_insights | safe }}
+            </div>
+            {% endif %}
         </div>
         
         <div class="citations">

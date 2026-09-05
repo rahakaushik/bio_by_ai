@@ -34,6 +34,11 @@ def main():
     writer = AIWriter()
     artist = AIArtist()
     
+    from graph_builder import GraphBuilder
+    import datetime
+    graph_builder = GraphBuilder()
+    today_str = datetime.date.today().strftime("%Y-%m-%d")
+    
     os.makedirs("public/images", exist_ok=True)
     
     for i, paper in enumerate(top_papers):
@@ -43,6 +48,12 @@ def main():
         if "story" in paper:
             headline = paper["story"].get("headline", "")
             body = paper["story"].get("html_body", "")
+            
+            # Extract and update Knowledge Graph
+            text_for_graph = headline + "\n" + body
+            paper_slug = f"editions/{today_str}/story_{i}.html"
+            logger.info(f"Updating Knowledge Graph with story_{i}...")
+            graph_builder.extract_and_merge(text_for_graph, paper_slug)
             
             image_prompt = artist.generate_image_prompt(headline, body)
             image_filename = f"public/images/story_{i}_{int(time.time())}.jpg"
