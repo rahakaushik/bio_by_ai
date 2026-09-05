@@ -28,7 +28,8 @@ class AIWriter:
         1. Tone: Engaging, attention-grabbing, and heavily focused on STORYTELLING. Hook the reader immediately with why this matters to the real world or the future of medicine. 
         2. Style: Avoid dry, academic jargon where possible. Use analogies. It should read like a high-end feature in Wired or The Atlantic—exciting and visionary, but scientifically accurate. NO clickbait.
         3. Content: Explain the core discovery (mechanism of action) and the broader implications for the longevity field seamlessly within the narrative.
-        4. Citations: Since we are writing a story about a single paper, do NOT use inline citation numbers (like [1]) in the text. However, you MUST provide a robust "Citations" section at the end to prevent hallucinations.
+        4. Critical Lens: Do NOT just paint a rosy picture. Your final paragraph MUST take a critical eye. Point out the study's limitations, translation challenges (e.g., mice to humans), or the long road ahead before clinical application. Be realistic but not overly pessimistic.
+        5. Citations: Since we are writing a story about a single paper, do NOT use inline citation numbers (like [1]) in the text. However, you MUST provide a robust "Citations" section at the end to prevent hallucinations.
         
         Paper Title: {paper['title']}
         Journal: {paper['journal']}
@@ -44,7 +45,7 @@ class AIWriter:
         Output format should be a JSON object with:
         - "headline": Catchy but accurate headline.
         - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
-        - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Include the inline citations here.
+        - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Write 4-5 paragraphs. The final paragraph MUST be the critical analysis of the limitations and challenges ahead. Include the inline citations here if needed.
         - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>). Include both the primary paper and the original news source if applicable.
         """
         
