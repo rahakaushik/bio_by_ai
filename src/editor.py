@@ -21,19 +21,32 @@ class AIEditor:
         if not papers:
             return []
             
-        logger.info(f"AI Editor evaluating {len(papers)} papers...")
+        manual_papers = [p for p in papers if p.get("manual_override")]
+        auto_papers = [p for p in papers if not p.get("manual_override")]
+        
+        selected_papers = manual_papers.copy()
+        for mp in selected_papers:
+            mp["editor_reasoning"] = "Manually curated by the Editor-in-Chief."
+            mp["total_score"] = 30
+            
+        remaining_slots = top_k - len(selected_papers)
+        
+        if remaining_slots <= 0 or not auto_papers:
+            return selected_papers[:top_k]
+            
+        logger.info(f"AI Editor evaluating {len(auto_papers)} auto-fetched papers for {remaining_slots} slots...")
         
         prompt = f"""
         You are the Chief Science Officer and Editor-in-Chief for a newsletter called "Bio By AI {{Longevity Edition}}".
         Your audience consists of scientists, biotech investors, and scientifically oriented public.
         
-        Please review the following {len(papers)} research paper summaries (Title and Abstract).
+        Please review the following {len(auto_papers)} research paper summaries (Title and Abstract).
         Score each paper from 1-10 on three criteria:
         1. Novelty (Is this a breakthrough or just incremental?)
         2. Market/Investment Potential (Is this translatable? Does it solve a major aging-related problem?)
         3. Scientific Rigor/Interest (Is it a robust study? Will scientists care?)
         
-        Return ONLY a valid JSON array of objects representing the top {top_k} papers with the highest total score.
+        Return ONLY a valid JSON array of objects representing the top {remaining_slots} papers with the highest total score.
         Each JSON object must have:
         - "id": The integer ID from the input list below.
         - "reasoning": A 2-sentence explanation of why this was selected.
@@ -42,7 +55,7 @@ class AIEditor:
         Here are the papers:
         """
         
-        for i, paper in enumerate(papers):
+        for i, paper in enumerate(auto_papers):
             prompt += f"\n--- Paper ID: {i} ---\nTitle: {paper['title']}\nAbstract: {paper['abstract']}\nJournal: {paper['journal']}\n"
             
         try:
@@ -59,11 +72,10 @@ class AIEditor:
                 
             top_papers_json = json.loads(cleaned_text)
             
-            selected_papers = []
             for item in top_papers_json:
                 paper_id = item.get("id")
-                if paper_id is not None and 0 <= paper_id < len(papers):
-                    paper_data = papers[paper_id].copy()
+                if paper_id is not None and 0 <= paper_id < len(auto_papers):
+                    paper_data = auto_papers[paper_id].copy()
                     paper_data["editor_reasoning"] = item.get("reasoning")
                     paper_data["total_score"] = item.get("total_score")
                     selected_papers.append(paper_data)
@@ -73,4 +85,5 @@ class AIEditor:
             
         except Exception as e:
             logger.error(f"Error during AI evaluation: {e}")
-            return papers[:top_k]
+            selected_papers.extend(auto_papers[:remaining_slots])
+            return selected_papers
