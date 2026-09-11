@@ -1,0 +1,248 @@
+{
+  "nodes": [
+    {
+      "id": "TMP-316",
+      "type": "Drug"
+    },
+    {
+      "id": "AGC kinases",
+      "type": "Protein"
+    },
+    {
+      "id": "Spinal cord injury",
+      "type": "Disease"
+    },
+    {
+      "id": "Stroke",
+      "type": "Disease"
+    },
+    {
+      "id": "Degenerative spinal diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "Rat",
+      "type": "Organism"
+    },
+    {
+      "id": "Human",
+      "type": "Organism"
+    },
+    {
+      "id": "AMnESTI",
+      "type": "Drug"
+    },
+    {
+      "id": "STING agonist",
+      "type": "Drug"
+    },
+    {
+      "id": "Manganese",
+      "type": "Drug"
+    },
+    {
+      "id": "STING",
+      "type": "Protein"
+    },
+    {
+      "id": "cGAS",
+      "type": "Protein"
+    },
+    {
+      "id": "Immunosenescence",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Influenza",
+      "type": "Disease"
+    },
+    {
+      "id": "RSV",
+      "type": "Disease"
+    },
+    {
+      "id": "COVID-19",
+      "type": "Disease"
+    },
+    {
+      "id": "COPD",
+      "type": "Disease"
+    },
+    {
+      "id": "Asthma",
+      "type": "Disease"
+    },
+    {
+      "id": "Mouse",
+      "type": "Organism"
+    },
+    {
+      "id": "Inactivated flu vaccine",
+      "type": "Drug"
+    },
+    {
+      "id": "Infections",
+      "type": "Disease"
+    },
+    {
+      "id": "Vaccines",
+      "type": "Drug"
+    },
+    {
+      "id": "Multiple myeloma",
+      "type": "Disease"
+    }
+  ],
+  "links": [
+    {
+      "source": "TMP-316",
+      "target": "AGC kinases",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "TMP-316",
+      "target": "Spinal cord injury",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "TMP-316",
+      "target": "Stroke",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "TMP-316",
+      "target": "Degenerative spinal diseases",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "AGC kinases",
+      "target": "Human",
+      "label": "expressed in",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "AGC kinases",
+      "target": "Rat",
+      "label": "expressed in",
+      "paper_slug": "editions/2026-09-11/story_0.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Immunosenescence",
+      "label": "reverses",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "STING agonist",
+      "label": "contains",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Manganese",
+      "label": "contains",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "STING agonist",
+      "target": "STING",
+      "label": "activates",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "cGAS",
+      "label": "activates",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "STING",
+      "label": "activates",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Inactivated flu vaccine",
+      "label": "synergizes with",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "Inactivated flu vaccine",
+      "target": "Influenza",
+      "label": "prevents",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Influenza",
+      "label": "prevents",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "RSV",
+      "label": "potentially treats",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "COVID-19",
+      "label": "potentially treats",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Mouse",
+      "label": "tested in",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Human",
+      "label": "targeted for",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Influenza",
+      "label": "increases susceptibility to",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "COPD",
+      "target": "Human",
+      "label": "complicates treatment in",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "Asthma",
+      "target": "Human",
+      "label": "complicates treatment in",
+      "paper_slug": "editions/2026-09-11/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Infections",
+      "label": "increases susceptibility to",
+      "paper_slug": "editions/2026-09-11/story_2.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Vaccines",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-11/story_2.html"
+    },
+    {
+      "source": "Vaccines",
+      "target": "Infections",
+      "label": "prevents",
+      "paper_slug": "editions/2026-09-11/story_2.html"
+    }
+  ]
+}
