@@ -1,39 +1,11 @@
 {
   "nodes": [
     {
-      "id": "TMP-316",
-      "type": "Drug"
-    },
-    {
-      "id": "AGC kinases",
-      "type": "Protein"
-    },
-    {
-      "id": "Spinal cord injury",
-      "type": "Disease"
-    },
-    {
-      "id": "Stroke",
-      "type": "Disease"
-    },
-    {
-      "id": "Degenerative spinal diseases",
-      "type": "Disease"
-    },
-    {
-      "id": "Rat",
-      "type": "Organism"
-    },
-    {
-      "id": "Human",
-      "type": "Organism"
-    },
-    {
       "id": "AMnESTI",
       "type": "Drug"
     },
     {
-      "id": "STING agonist",
+      "id": "ADU-S100",
       "type": "Drug"
     },
     {
@@ -45,10 +17,6 @@
       "type": "Protein"
     },
     {
-      "id": "cGAS",
-      "type": "Protein"
-    },
-    {
       "id": "Immunosenescence",
       "type": "Hallmark"
     },
@@ -57,192 +25,194 @@
       "type": "Disease"
     },
     {
-      "id": "RSV",
+      "id": "Cytokine storm",
       "type": "Disease"
     },
     {
-      "id": "COVID-19",
+      "id": "Neurotoxicity",
       "type": "Disease"
     },
     {
-      "id": "COPD",
+      "id": "CXCR4",
+      "type": "Protein"
+    },
+    {
+      "id": "CXCL12",
+      "type": "Protein"
+    },
+    {
+      "id": "Tetanus Vaccine",
+      "type": "Drug"
+    },
+    {
+      "id": "Tetanus",
       "type": "Disease"
     },
     {
-      "id": "Asthma",
-      "type": "Disease"
-    },
-    {
-      "id": "Mouse",
+      "id": "Human",
       "type": "Organism"
     },
     {
-      "id": "Inactivated flu vaccine",
+      "id": "DZSM",
       "type": "Drug"
     },
     {
-      "id": "Infections",
-      "type": "Disease"
-    },
-    {
-      "id": "Vaccines",
+      "id": "Com1-3",
       "type": "Drug"
     },
     {
-      "id": "Multiple myeloma",
-      "type": "Disease"
+      "id": "\u03b2-galactosidase",
+      "type": "Protein"
+    },
+    {
+      "id": "reactive oxygen species",
+      "type": "Hallmark"
+    },
+    {
+      "id": "cellular senescence",
+      "type": "Hallmark"
+    },
+    {
+      "id": "p53",
+      "type": "Protein"
+    },
+    {
+      "id": "FoxO",
+      "type": "Protein"
+    },
+    {
+      "id": "autophagy",
+      "type": "Hallmark"
+    },
+    {
+      "id": "D-galactose",
+      "type": "Drug"
+    },
+    {
+      "id": "PC12 cells",
+      "type": "Organism"
     }
   ],
   "links": [
     {
-      "source": "TMP-316",
-      "target": "AGC kinases",
-      "label": "inhibits",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
-      "source": "TMP-316",
-      "target": "Spinal cord injury",
-      "label": "treats",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
-      "source": "TMP-316",
-      "target": "Stroke",
-      "label": "treats",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
-      "source": "TMP-316",
-      "target": "Degenerative spinal diseases",
-      "label": "treats",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
-      "source": "AGC kinases",
-      "target": "Human",
-      "label": "expressed in",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
-      "source": "AGC kinases",
-      "target": "Rat",
-      "label": "expressed in",
-      "paper_slug": "editions/2026-09-11/story_0.html"
-    },
-    {
       "source": "AMnESTI",
-      "target": "Immunosenescence",
-      "label": "reverses",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "STING agonist",
+      "target": "ADU-S100",
       "label": "contains",
-      "paper_slug": "editions/2026-09-11/story_1.html"
+      "paper_slug": "editions/2026-09-12/story_0.html"
     },
     {
       "source": "AMnESTI",
       "target": "Manganese",
       "label": "contains",
-      "paper_slug": "editions/2026-09-11/story_1.html"
+      "paper_slug": "editions/2026-09-12/story_0.html"
     },
     {
-      "source": "STING agonist",
+      "source": "ADU-S100",
       "target": "STING",
       "label": "activates",
-      "paper_slug": "editions/2026-09-11/story_1.html"
+      "paper_slug": "editions/2026-09-12/story_0.html"
     },
     {
-      "source": "AMnESTI",
-      "target": "cGAS",
-      "label": "activates",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
+      "source": "Manganese",
       "target": "STING",
-      "label": "activates",
-      "paper_slug": "editions/2026-09-11/story_1.html"
+      "label": "increases",
+      "paper_slug": "editions/2026-09-12/story_0.html"
     },
     {
       "source": "AMnESTI",
-      "target": "Inactivated flu vaccine",
-      "label": "synergizes with",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "Inactivated flu vaccine",
-      "target": "Influenza",
-      "label": "prevents",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "Influenza",
-      "label": "prevents",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "RSV",
-      "label": "potentially treats",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "COVID-19",
-      "label": "potentially treats",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "Mouse",
-      "label": "tested in",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "AMnESTI",
-      "target": "Human",
-      "label": "targeted for",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "Immunosenescence",
-      "target": "Influenza",
-      "label": "increases susceptibility to",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "COPD",
-      "target": "Human",
-      "label": "complicates treatment in",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "Asthma",
-      "target": "Human",
-      "label": "complicates treatment in",
-      "paper_slug": "editions/2026-09-11/story_1.html"
-    },
-    {
-      "source": "Immunosenescence",
-      "target": "Infections",
-      "label": "increases susceptibility to",
-      "paper_slug": "editions/2026-09-11/story_2.html"
-    },
-    {
-      "source": "Immunosenescence",
-      "target": "Vaccines",
+      "target": "Immunosenescence",
       "label": "inhibits",
-      "paper_slug": "editions/2026-09-11/story_2.html"
+      "paper_slug": "editions/2026-09-12/story_0.html"
     },
     {
-      "source": "Vaccines",
-      "target": "Infections",
+      "source": "AMnESTI",
+      "target": "Influenza",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "STING",
+      "target": "Cytokine storm",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Manganese",
+      "target": "Neurotoxicity",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "CXCL12",
+      "target": "CXCR4",
+      "label": "interacts with",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "Tetanus Vaccine",
+      "target": "Tetanus",
       "label": "prevents",
-      "paper_slug": "editions/2026-09-11/story_2.html"
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Human",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "DZSM",
+      "target": "Com1-3",
+      "label": "optimized into",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "\u03b2-galactosidase",
+      "label": "decreases",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "reactive oxygen species",
+      "label": "decreases",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "p53",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "FoxO",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Com1-3",
+      "target": "autophagy",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "D-galactose",
+      "target": "cellular senescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "D-galactose",
+      "target": "PC12 cells",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-12/story_2.html"
     }
   ]
 }
