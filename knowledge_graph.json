@@ -139,6 +139,38 @@
     {
       "id": "Alzheimer's disease",
       "type": "Disease"
+    },
+    {
+      "id": "mice",
+      "type": "Organism"
+    },
+    {
+      "id": "humans",
+      "type": "Organism"
+    },
+    {
+      "id": "ASCs",
+      "type": "Organism"
+    },
+    {
+      "id": "Bone marrow niche degradation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Vaccines",
+      "type": "Drug"
+    },
+    {
+      "id": "Immunotherapies",
+      "type": "Drug"
+    },
+    {
+      "id": "Astrocytes",
+      "type": "Organism"
+    },
+    {
+      "id": "Locus coeruleus",
+      "type": "Organism"
     }
   ],
   "links": [
@@ -374,6 +406,96 @@
       "source": "tau",
       "target": "Alzheimer's disease",
       "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "STING",
+      "label": "activates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Manganese",
+      "target": "STING",
+      "label": "activates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Influenza",
+      "label": "increases vulnerability to",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "mice",
+      "label": "tested on",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "humans",
+      "label": "requires safety testing in",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "CXCR4",
+      "target": "ASCs",
+      "label": "guides migration of",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "CXCL12",
+      "target": "ASCs",
+      "label": "guides migration of",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "Bone marrow niche degradation",
+      "target": "Immunosenescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Vaccines",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Immunotherapies",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "APOE4",
+      "target": "Alzheimer's disease",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "Alzheimer's disease",
+      "label": "protects against",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "APOE4",
+      "target": "Astrocytes",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Astrocytes",
+      "target": "Locus coeruleus",
+      "label": "supports",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "tau",
+      "target": "Locus coeruleus",
+      "label": "accumulates in",
       "paper_slug": "editions/2026-09-12/story_2.html"
     }
   ]
