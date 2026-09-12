@@ -91,6 +91,54 @@
     {
       "id": "PC12 cells",
       "type": "Organism"
+    },
+    {
+      "id": "Dengzhan Shengmai",
+      "type": "Drug"
+    },
+    {
+      "id": "Com1\u20133",
+      "type": "Drug"
+    },
+    {
+      "id": "Senescence",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Cognitive Decline",
+      "type": "Disease"
+    },
+    {
+      "id": "PC12 cell",
+      "type": "Organism"
+    },
+    {
+      "id": "Hyper-inflammation",
+      "type": "Disease"
+    },
+    {
+      "id": "APOE4",
+      "type": "Gene"
+    },
+    {
+      "id": "APOE2",
+      "type": "Gene"
+    },
+    {
+      "id": "APOE",
+      "type": "Gene"
+    },
+    {
+      "id": "neuromelanin",
+      "type": "Protein"
+    },
+    {
+      "id": "tau",
+      "type": "Protein"
+    },
+    {
+      "id": "Alzheimer's disease",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -212,6 +260,120 @@
       "source": "D-galactose",
       "target": "PC12 cells",
       "label": "affects",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "Dengzhan Shengmai",
+      "target": "Com1\u20133",
+      "label": "contains",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "Senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "reactive oxygen species",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "FoxO",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "p53",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "autophagy",
+      "label": "regulates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "D-galactose",
+      "target": "Senescence",
+      "label": "induces",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Senescence",
+      "target": "Cognitive Decline",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "Com1\u20133",
+      "target": "PC12 cell",
+      "label": "rejuvenates",
+      "paper_slug": "editions/2026-09-12/story_0.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "ADU-S100",
+      "label": "delivers",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "AMnESTI",
+      "target": "Manganese",
+      "label": "delivers",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "ADU-S100",
+      "target": "STING",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "STING",
+      "target": "Hyper-inflammation",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-12/story_1.html"
+    },
+    {
+      "source": "APOE4",
+      "target": "Alzheimer's disease",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "Alzheimer's disease",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "APOE",
+      "target": "neuromelanin",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "neuromelanin",
+      "target": "autophagy",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "autophagy",
+      "target": "tau",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "tau",
+      "target": "Alzheimer's disease",
+      "label": "causes",
       "paper_slug": "editions/2026-09-12/story_2.html"
     }
   ]
