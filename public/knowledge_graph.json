@@ -1,0 +1,480 @@
+{
+  "nodes": [
+    {
+      "id": "rapamycin",
+      "type": "Drug"
+    },
+    {
+      "id": "mTOR",
+      "type": "Protein"
+    },
+    {
+      "id": "cellular senescence",
+      "type": "Hallmark"
+    },
+    {
+      "id": "age-related diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "mice",
+      "type": "Organism"
+    },
+    {
+      "id": "Sarcopenia",
+      "type": "Disease"
+    },
+    {
+      "id": "HIF1\u03b1",
+      "type": "Protein"
+    },
+    {
+      "id": "HIF-PHIs",
+      "type": "Drug"
+    },
+    {
+      "id": "Lactate",
+      "type": "Protein"
+    },
+    {
+      "id": "Lactic acidosis",
+      "type": "Disease"
+    },
+    {
+      "id": "NAD+",
+      "type": "Protein"
+    },
+    {
+      "id": "Myostatin inhibitors",
+      "type": "Drug"
+    },
+    {
+      "id": "SARMs",
+      "type": "Drug"
+    },
+    {
+      "id": "Chemotherapy",
+      "type": "Drug"
+    },
+    {
+      "id": "TGF-\u03b2 blockers",
+      "type": "Drug"
+    },
+    {
+      "id": "CCDC25 inhibitors",
+      "type": "Drug"
+    },
+    {
+      "id": "TGF-\u03b2",
+      "type": "Protein"
+    },
+    {
+      "id": "CCDC25",
+      "type": "Protein"
+    },
+    {
+      "id": "PI3K-AKT",
+      "type": "Protein"
+    },
+    {
+      "id": "NETosis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "PDAC",
+      "type": "Disease"
+    },
+    {
+      "id": "Hepatic Metastasis",
+      "type": "Disease"
+    },
+    {
+      "id": "Mitohormesis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Mitochondrial Superoxide",
+      "type": "Drug"
+    },
+    {
+      "id": "Mitochondrial Aconitase",
+      "type": "Protein"
+    },
+    {
+      "id": "Citrate",
+      "type": "Drug"
+    },
+    {
+      "id": "Acetyl-coenzyme A",
+      "type": "Drug"
+    },
+    {
+      "id": "Histone Acetylation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Mitochondrial Biogenesis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Doxorubicin",
+      "type": "Drug"
+    },
+    {
+      "id": "Cardiotoxicity",
+      "type": "Disease"
+    },
+    {
+      "id": "Heart Failure",
+      "type": "Disease"
+    },
+    {
+      "id": "Cardiovascular Disease",
+      "type": "Disease"
+    },
+    {
+      "id": "Anemia",
+      "type": "Disease"
+    },
+    {
+      "id": "Mitochondrial dysfunction",
+      "type": "Hallmark"
+    },
+    {
+      "id": "NETosis-disrupting therapies",
+      "type": "Drug"
+    },
+    {
+      "id": "Senolytics",
+      "type": "Drug"
+    },
+    {
+      "id": "superoxide",
+      "type": "Drug"
+    },
+    {
+      "id": "acetyl-CoA",
+      "type": "Drug"
+    }
+  ],
+  "links": [
+    {
+      "source": "rapamycin",
+      "target": "mTOR",
+      "label": "inhibits",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "mTOR",
+      "target": "cellular senescence",
+      "label": "increases",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "mTOR",
+      "target": "age-related diseases",
+      "label": "increases",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "rapamycin",
+      "target": "mice",
+      "label": "tested in",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Sarcopenia",
+      "label": "causes",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Lactate",
+      "target": "Lactic acidosis",
+      "label": "causes",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Lactic acidosis",
+      "target": "NAD+",
+      "label": "decreases",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Lactic acidosis",
+      "target": "Sarcopenia",
+      "label": "causes",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "NAD+",
+      "target": "Sarcopenia",
+      "label": "prevents",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "HIF1\u03b1",
+      "target": "Lactate",
+      "label": "decreases",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "HIF-PHIs",
+      "target": "HIF1\u03b1",
+      "label": "activates",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Myostatin inhibitors",
+      "target": "Sarcopenia",
+      "label": "treats",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "SARMs",
+      "target": "Sarcopenia",
+      "label": "treats",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Sarcopenia",
+      "target": "mice",
+      "label": "affects",
+      "paper_slug": "story_0.html"
+    },
+    {
+      "source": "Chemotherapy",
+      "target": "cellular senescence",
+      "label": "causes",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "Chemotherapy",
+      "target": "PDAC",
+      "label": "treats",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "TGF-\u03b2",
+      "label": "increases",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "TGF-\u03b2",
+      "target": "NETosis",
+      "label": "increases",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "NETosis",
+      "target": "CCDC25",
+      "label": "activates",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "CCDC25",
+      "target": "PI3K-AKT",
+      "label": "activates",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "PI3K-AKT",
+      "target": "Hepatic Metastasis",
+      "label": "causes",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "TGF-\u03b2 blockers",
+      "target": "TGF-\u03b2",
+      "label": "inhibits",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "CCDC25 inhibitors",
+      "target": "CCDC25",
+      "label": "inhibits",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "TGF-\u03b2 blockers",
+      "target": "Hepatic Metastasis",
+      "label": "prevents",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "CCDC25 inhibitors",
+      "target": "Hepatic Metastasis",
+      "label": "prevents",
+      "paper_slug": "story_1.html"
+    },
+    {
+      "source": "Mitochondrial Superoxide",
+      "target": "Mitohormesis",
+      "label": "increases",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Mitochondrial Superoxide",
+      "target": "Mitochondrial Aconitase",
+      "label": "inhibits",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Mitochondrial Aconitase",
+      "target": "Citrate",
+      "label": "inhibits",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Citrate",
+      "target": "Acetyl-coenzyme A",
+      "label": "increases",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Acetyl-coenzyme A",
+      "target": "Histone Acetylation",
+      "label": "increases",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Histone Acetylation",
+      "target": "Mitochondrial Biogenesis",
+      "label": "increases",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Doxorubicin",
+      "target": "Cardiotoxicity",
+      "label": "causes",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Doxorubicin",
+      "target": "Heart Failure",
+      "label": "causes",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Mitohormesis",
+      "target": "Cardiotoxicity",
+      "label": "prevents",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Mitohormesis",
+      "target": "Heart Failure",
+      "label": "prevents",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "Mitohormesis",
+      "target": "Cardiovascular Disease",
+      "label": "prevents",
+      "paper_slug": "story_2.html"
+    },
+    {
+      "source": "HIF-PHIs",
+      "target": "HIF1\u03b1",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "HIF-PHIs",
+      "target": "Anemia",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "HIF1\u03b1",
+      "target": "Lactic acidosis",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "Lactic acidosis",
+      "target": "NAD+",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "NAD+",
+      "target": "Mitochondrial dysfunction",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "Mitochondrial dysfunction",
+      "target": "Sarcopenia",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-04/story_0.html"
+    },
+    {
+      "source": "Chemotherapy",
+      "target": "cellular senescence",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "Chemotherapy",
+      "target": "Hepatic Metastasis",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "NETosis-disrupting therapies",
+      "target": "NETosis",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "Senolytics",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "NETosis-disrupting therapies",
+      "target": "Hepatic Metastasis",
+      "label": "prevents",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "Hepatic Metastasis",
+      "target": "mice",
+      "label": "occurs in",
+      "paper_slug": "editions/2026-09-04/story_1.html"
+    },
+    {
+      "source": "superoxide",
+      "target": "Mitochondrial Aconitase",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_2.html"
+    },
+    {
+      "source": "Citrate",
+      "target": "acetyl-CoA",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-04/story_2.html"
+    },
+    {
+      "source": "acetyl-CoA",
+      "target": "Histone Acetylation",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-04/story_2.html"
+    },
+    {
+      "source": "superoxide",
+      "target": "Mitohormesis",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-04/story_2.html"
+    },
+    {
+      "source": "Mitohormesis",
+      "target": "Cardiotoxicity",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-04/story_2.html"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio By AI - Longevity Knowledge Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            padding: 20px;
+            background: #fff;
+            border-bottom: 4px solid #2c3e50;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .header a:hover { text-decoration: underline; }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        #cy {
+            flex: 3;
+            background-color: #fff;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-left: 1px solid #ddd;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4em;
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 10px;
+        }
+        
+        #info-panel {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        
+        .read-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .read-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Longevity Knowledge Graph</h1>
+        <div style="margin-top:10px;"><a href="index.html">← Back to Front Page</a></div>
+    </div>
+    
+    <div class="container">
+        <div id="cy"></div>
+        <div class="sidebar">
+            <h2>Explorer</h2>
+            <div id="info-panel">
+                <p>Click on any node or connection to explore the science.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colorMap = {
+            "Drug": "#e74c3c",
+            "Gene": "#3498db",
+            "Protein": "#9b59b6",
+            "Disease": "#e67e22",
+            "Hallmark": "#1abc9c",
+            "Organism": "#95a5a6",
+            "Unknown": "#7f8c8d"
+        };
+
+        fetch('knowledge_graph.json')
+            .then(res => res.json())
+            .then(data => {
+                const elements = [];
+                
+                // Add nodes
+                data.nodes.forEach(node => {
+                    elements.push({
+                        data: {
+                            id: node.id,
+                            type: node.type,
+                            color: colorMap[node.type] || colorMap["Unknown"]
+                        }
+                    });
+                });
+                
+                // Add edges
+                data.links.forEach(link => {
+                    elements.push({
+                        data: {
+                            id: link.source + '-' + link.target,
+                            source: link.source,
+                            target: link.target,
+                            label: link.label,
+                            paper_slug: link.paper_slug
+                        }
+                    });
+                });
+
+                const cy = cytoscape({
+                    container: document.getElementById('cy'),
+                    elements: elements,
+                    style: [
+                        {
+                            selector: 'node',
+                            style: {
+                                'background-color': 'data(color)',
+                                'label': 'data(id)',
+                                'color': '#333',
+                                'font-size': '14px',
+                                'font-family': 'Georgia, serif',
+                                'text-valign': 'top',
+                                'text-halign': 'center',
+                                'text-margin-y': -5,
+                                'width': 30,
+                                'height': 30
+                            }
+                        },
+                        {
+                            selector: 'edge',
+                            style: {
+                                'width': 2,
+                                'line-color': '#bdc3c7',
+                                'target-arrow-color': '#bdc3c7',
+                                'target-arrow-shape': 'triangle',
+                                'curve-style': 'bezier',
+                                'label': 'data(label)',
+                                'font-size': '10px',
+                                'text-rotation': 'autorotate',
+                                'text-margin-y': -10,
+                                'color': '#7f8c8d'
+                            }
+                        }
+                    ],
+                    layout: {
+                        name: 'cose',
+                        padding: 50,
+                        nodeRepulsion: 400000,
+                        idealEdgeLength: 100,
+                        edgeElasticity: 100
+                    }
+                });
+
+                // Interaction logic
+                const infoPanel = document.getElementById('info-panel');
+                
+                cy.on('tap', 'node', function(evt){
+                    const node = evt.target;
+                    const type = node.data('type');
+                    const id = node.data('id');
+                    
+                    let connectedEdges = node.connectedEdges();
+                    let connectionsHtml = "<ul>";
+                    connectedEdges.forEach(edge => {
+                        let source = edge.source().data('id');
+                        let target = edge.target().data('id');
+                        let label = edge.data('label');
+                        connectionsHtml += `<li><strong>${source}</strong> ${label} <strong>${target}</strong></li>`;
+                    });
+                    connectionsHtml += "</ul>";
+                    
+                    infoPanel.innerHTML = `
+                        <h3>${id}</h3>
+                        <p><strong>Type:</strong> <span style="color:${node.data('color')}; font-weight:bold;">${type}</span></p>
+                        <p><strong>Known Relationships:</strong></p>
+                        ${connectionsHtml}
+                    `;
+                });
+                
+                cy.on('tap', 'edge', function(evt){
+                    const edge = evt.target;
+                    const source = edge.source().data('id');
+                    const target = edge.target().data('id');
+                    const label = edge.data('label');
+                    const slug = edge.data('paper_slug');
+                    
+                    infoPanel.innerHTML = `
+                        <h3>Relationship</h3>
+                        <p><strong>${source}</strong> ${label} <strong>${target}</strong></p>
+                        <p>This relationship was extracted from a newsletter story.</p>
+                        ${slug ? `<a href="${slug}" class="read-btn" target="_blank">Read the Original Story</a>` : ''}
+                    `;
+                });
+            })
+            .catch(err => {
+                console.error("Could not load knowledge graph", err);
+                document.getElementById('info-panel').innerHTML = "<p>Error loading graph data. Make sure knowledge_graph.json exists.</p>";
+            });
+    </script>
+</body>
+</html>

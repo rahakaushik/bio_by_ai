@@ -29,7 +29,11 @@ jobs:
         run: |
           mkdir -p public
           git fetch origin gh-pages || echo "No gh-pages branch to fetch"
-          git archive origin/gh-pages editions images knowledge_graph.json | tar -x -C public/ || echo "No previous files to restore"
+          git checkout origin/gh-pages -- editions/ images/ knowledge_graph.json || true
+          mv editions public/ 2>/dev/null || true
+          mv images public/ 2>/dev/null || true
+          mv knowledge_graph.json public/ 2>/dev/null || true
+          rm -rf public/editions/2026-08-28 || true
           
       - name: Run Pipeline
         env:
@@ -44,4 +48,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          keep_files: true

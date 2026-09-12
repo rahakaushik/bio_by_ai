@@ -18,6 +18,34 @@ class AIWriter:
         self.model_name = model_name
         
     def write_story(self, paper):
+        # Extract Knowledge Graph Context
+        kg_context = ""
+        kg_file = os.path.join("public", "knowledge_graph.json")
+        if os.path.exists(kg_file):
+            try:
+                import re
+                with open(kg_file, "r") as f:
+                    kg = json.load(f)
+                    
+                combined_text = (paper['title'] + " " + paper['abstract']).lower()
+                matched_nodes = []
+                for node in kg.get("nodes", []):
+                    node_id = node.get("id", "")
+                    if len(node_id) > 2 and re.search(r'\b' + re.escape(node_id.lower()) + r'\b', combined_text):
+                        matched_nodes.append(node_id.lower())
+                        
+                if matched_nodes:
+                    relevant_links = []
+                    for link in kg.get("links", []):
+                        if link.get("source", "").lower() in matched_nodes or link.get("target", "").lower() in matched_nodes:
+                            relevant_links.append(f"- {link['source']} {link['label']} {link['target']}")
+                            
+                    if relevant_links:
+                        relevant_links = list(set(relevant_links))[:15]
+                        kg_context = "\n--- HISTORICAL KNOWLEDGE GRAPH INSIGHTS (from past newsletters) ---\n" + "\n".join(relevant_links)
+            except Exception as e:
+                logger.warning(f"Failed to load KG for context: {e}")
+                
         prompt = f"""
         You are a top-tier science journalist writing for "Bio By AI {{Longevity Edition}}".
         Your audience is scientists, biotech investors, and scientifically oriented public.
@@ -36,6 +64,7 @@ class AIWriter:
         URL: {paper['url']}
         Abstract: {paper['abstract']}
         Editor's Note: {paper.get('editor_reasoning', '')}
+        {kg_context}
         """
         
         if paper.get('original_news_url'):
@@ -46,6 +75,7 @@ class AIWriter:
         - "headline": Catchy but accurate headline.
         - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
         - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Write 4-5 paragraphs. The final paragraph MUST be the critical analysis of the limitations and challenges ahead. Include the inline citations here if needed.
+        - "kg_insights": An optional HTML paragraph starting with '<strong>Insights from Longevity KG:</strong> '. Include this ONLY if the historical knowledge graph insights provided above are highly relevant and you can connect past findings to this new paper to show a trend. If no KG insights were provided or they aren't relevant, return an empty string "".
         - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>). Include both the primary paper and the original news source if applicable.
         """
         
