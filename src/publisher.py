@@ -47,6 +47,11 @@ class Publisher:
         os.makedirs(edition_output_dir, exist_ok=True)
         self._render_files(papers, index_template, story_template, today_str_display, today_str_folder, editions, edition_output_dir, "../..")
 
+        import shutil
+        graph_template_path = os.path.join(self.template_dir, "graph_template.html")
+        if os.path.exists(graph_template_path):
+            shutil.copy(graph_template_path, os.path.join(self.output_dir, "graph.html"))
+            
         logger.info(f"Newsletter published to {self.output_dir}/index.html")
         return os.path.join(self.output_dir, "index.html")
         

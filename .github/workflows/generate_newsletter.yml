@@ -25,6 +25,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
+      - name: Restore history from gh-pages
+        run: |
+          mkdir -p public
+          git fetch origin gh-pages || echo "No gh-pages branch to fetch"
+          git archive origin/gh-pages editions images knowledge_graph.json | tar -x -C public/ || echo "No previous files to restore"
+          
       - name: Run Pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -38,3 +44,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          keep_files: true
