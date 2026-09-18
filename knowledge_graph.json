@@ -171,6 +171,46 @@
     {
       "id": "Locus coeruleus",
       "type": "Organism"
+    },
+    {
+      "id": "H2A.Z",
+      "type": "Protein"
+    },
+    {
+      "id": "Cancer",
+      "type": "Disease"
+    },
+    {
+      "id": "CAR-oHSV",
+      "type": "Drug"
+    },
+    {
+      "id": "PD-L1",
+      "type": "Protein"
+    },
+    {
+      "id": "Tumor-Associated Macrophages",
+      "type": "Organism"
+    },
+    {
+      "id": "Aging",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Chronic Diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "Senolytic",
+      "type": "Drug"
+    },
+    {
+      "id": "Metabolic Optimizer",
+      "type": "Drug"
+    },
+    {
+      "id": "Cellular Rejuvenation Therapy",
+      "type": "Drug"
     }
   ],
   "links": [
@@ -497,6 +537,84 @@
       "target": "Locus coeruleus",
       "label": "accumulates in",
       "paper_slug": "editions/2026-09-12/story_2.html"
+    },
+    {
+      "source": "H2A.Z",
+      "target": "Immunosenescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-18/story_0.html"
+    },
+    {
+      "source": "H2A.Z",
+      "target": "Cancer",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-18/story_0.html"
+    },
+    {
+      "source": "CAR-oHSV",
+      "target": "PD-L1",
+      "label": "targets",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "CAR-oHSV",
+      "target": "Cancer",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "CAR-oHSV",
+      "target": "Tumor-Associated Macrophages",
+      "label": "reprograms",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Cancer",
+      "label": "increases susceptibility to",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "Tumor-Associated Macrophages",
+      "target": "Cancer",
+      "label": "promotes",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "Cancer",
+      "target": "PD-L1",
+      "label": "expresses",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "Tumor-Associated Macrophages",
+      "target": "PD-L1",
+      "label": "expresses",
+      "paper_slug": "editions/2026-09-18/story_1.html"
+    },
+    {
+      "source": "Chronic Diseases",
+      "target": "Aging",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-18/story_2.html"
+    },
+    {
+      "source": "Senolytic",
+      "target": "Aging",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-18/story_2.html"
+    },
+    {
+      "source": "Metabolic Optimizer",
+      "target": "Aging",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-18/story_2.html"
+    },
+    {
+      "source": "Cellular Rejuvenation Therapy",
+      "target": "Aging",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-18/story_2.html"
     }
   ]
 }
