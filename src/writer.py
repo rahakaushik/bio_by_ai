@@ -75,7 +75,7 @@ class AIWriter:
         - "headline": Catchy but accurate headline.
         - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
         - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Write 4-5 paragraphs. The final paragraph MUST be the critical analysis of the limitations and challenges ahead. Include the inline citations here if needed.
-        - "kg_insights": An optional HTML paragraph starting with '<strong>Insights from Longevity KG:</strong> '. Include this ONLY if the historical knowledge graph insights provided above are highly relevant and you can connect past findings to this new paper to show a trend. If no KG insights were provided or they aren't relevant, return an empty string "".
+        - "kg_insights": A generated HTML paragraph starting exactly with '<strong>Insights from Longevity KG:</strong> '. If HISTORICAL KNOWLEDGE GRAPH INSIGHTS were provided above, you MUST write this paragraph connecting the past findings to this new paper. If absolutely NO historical insights were provided, return an empty string "".
         - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>). Include both the primary paper and the original news source if applicable.
         """
         

@@ -148,7 +148,7 @@
             {% if paper.image_path %}
             <a href="{{ paper.slug }}">
                 <!-- Ensure correct pathing when on the same directory level -->
-                <img src="{{ root_path }}/{{ paper.image_path }}" alt="Infographic" class="story-img">
+                <img src="{% if image_base_path %}{{ image_base_path }}/{% endif %}{{ paper.image_path }}" alt="Infographic" class="story-img">
             </a>
             {% endif %}
             <h2><a href="{{ paper.slug }}">{{ paper.story.headline }}</a></h2>

@@ -123,7 +123,7 @@
         </div>
 
         {% if paper.image_path %}
-        <img src="{{ root_path }}/{{ paper.image_path }}" alt="Infographic" class="story-img">
+        <img src="{% if image_base_path %}{{ image_base_path }}/{% endif %}{{ paper.image_path }}" alt="Infographic" class="story-img">
         <div style="text-align:center; font-size: 0.85em; color: #777; margin-top: -20px; margin-bottom: 30px;">AI-generated infographic representation of the study</div>
         {% endif %}
         

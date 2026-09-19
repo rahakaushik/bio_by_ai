@@ -38,8 +38,8 @@ def main():
     import datetime
     graph_builder = GraphBuilder()
     today_str = datetime.date.today().strftime("%Y-%m-%d")
-    
-    os.makedirs("public/images", exist_ok=True)
+    edition_dir = f"public/editions/{today_str}"
+    os.makedirs(f"{edition_dir}/images", exist_ok=True)
     
     for i, paper in enumerate(top_papers):
         logger.info(f"Writing story for: {paper['title']}")
@@ -56,11 +56,12 @@ def main():
             graph_builder.extract_and_merge(text_for_graph, paper_slug)
             
             image_prompt = artist.generate_image_prompt(headline, body)
-            image_filename = f"public/images/story_{i}_{int(time.time())}.jpg"
+            image_filename = f"{edition_dir}/images/story_{i}_{int(time.time())}.jpg"
             
             saved_path = artist.generate_image(image_prompt, image_filename)
             if saved_path:
-                paper["image_path"] = saved_path.replace("public/", "")
+                # Store the relative path from the edition directory
+                paper["image_path"] = f"images/{os.path.basename(saved_path)}"
                 
     publisher = Publisher()
     publisher.publish(top_papers)
