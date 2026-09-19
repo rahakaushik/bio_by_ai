@@ -41,13 +41,13 @@ class Publisher:
                 
         # 1. Render for ROOT
         # For the root index, images are inside the latest edition's folder
-        self._render_files(papers, index_template, story_template, today_str_display, today_str_folder, editions, self.output_dir, ".", f"editions/{today_str_folder}")
+        self._render_files(papers, index_template, story_template, today_str_display, today_str_folder, editions, self.output_dir, ".", f"editions/{today_str_folder}", is_root=True)
         
         # 2. Render for EDITION FOLDER
         # For the edition index, images are locally in the 'images' folder
         edition_output_dir = os.path.join(editions_dir, today_str_folder)
         os.makedirs(edition_output_dir, exist_ok=True)
-        self._render_files(papers, index_template, story_template, today_str_display, today_str_folder, editions, edition_output_dir, "../..", ".")
+        self._render_files(papers, index_template, story_template, today_str_display, today_str_folder, editions, edition_output_dir, "../..", ".", is_root=False)
 
         import shutil
         graph_template_path = os.path.join(self.template_dir, "graph_template.html")
@@ -70,18 +70,14 @@ class Publisher:
             if not os.path.isdir(ed_path):
                 continue
                 
-            options = []
+            options_html = ""
             for e in editions:
-                if e != ed:
-                    options.append(f'                            <option value="../../editions/{e}/index.html">{e}</option>')
-            options_html = "\n".join(options)
+                selected = ' selected' if e == ed else ''
+                options_html += f'\n                <option value="../../editions/{e}/index.html"{selected}>{e}</option>'
             
             new_select = f"""<select onchange="if (this.value) window.location.href=this.value;" style="padding: 5px; font-family: 'Georgia', serif; border-radius: 4px; border: 1px solid #ccc;">
-                    <option value="../../index.html">Current Edition</option>
-                    <optgroup label="Previous Editions">
-{options_html}
-                    </optgroup>
-                </select>"""
+                <option value="../../index.html">Current Edition</option>{options_html}
+            </select>"""
                 
             for root, dirs, files in os.walk(ed_path):
                 for file in files:
@@ -93,14 +89,15 @@ class Publisher:
                         with open(filepath, "w") as f:
                             f.write(content)
         
-    def _render_files(self, papers, index_template, story_template, date_display, folder_date, editions, out_dir, root_path, image_base_path):
+    def _render_files(self, papers, index_template, story_template, date_display, folder_date, editions, out_dir, root_path, image_base_path, is_root=False):
         html_content = index_template.render(
             date=date_display,
             folder_date=folder_date,
             papers=papers,
             editions=editions,
             root_path=root_path,
-            image_base_path=image_base_path
+            image_base_path=image_base_path,
+            is_root=is_root
         )
         with open(os.path.join(out_dir, "index.html"), "w") as f:
             f.write(html_content)
@@ -113,7 +110,8 @@ class Publisher:
                     paper=paper,
                     editions=editions,
                     root_path=root_path,
-                    image_base_path=image_base_path
+                    image_base_path=image_base_path,
+                    is_root=is_root
                 )
                 with open(os.path.join(out_dir, paper["slug"]), "w") as f:
                     f.write(story_html)
