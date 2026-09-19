@@ -279,6 +279,30 @@
     {
       "id": "Senolytics",
       "type": "Drug"
+    },
+    {
+      "id": "Cardiovascular disease",
+      "type": "Disease"
+    },
+    {
+      "id": "Leukemia",
+      "type": "Disease"
+    },
+    {
+      "id": "neurodegenerative disease",
+      "type": "Disease"
+    },
+    {
+      "id": "amyloid-beta plaques",
+      "type": "Protein"
+    },
+    {
+      "id": "tau tangles",
+      "type": "Protein"
+    },
+    {
+      "id": "brain aging",
+      "type": "Hallmark"
     }
   ],
   "links": [
@@ -832,6 +856,60 @@
       "source": "Diabetes",
       "target": "Human",
       "label": "affects",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "\u03b3CaMKII",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "Alzheimer's disease",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Cardiovascular disease",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Leukemia",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Cortical atrophy",
+      "label": "correlates with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Cortical atrophy",
+      "target": "Alzheimer's disease",
+      "label": "characterizes",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "amyloid-beta plaques",
+      "target": "neurodegenerative disease",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "tau tangles",
+      "target": "neurodegenerative disease",
+      "label": "associated with",
       "paper_slug": "editions/2026-09-19/story_2.html"
     }
   ]
