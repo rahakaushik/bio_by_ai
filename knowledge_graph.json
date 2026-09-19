@@ -211,6 +211,74 @@
     {
       "id": "Cellular Rejuvenation Therapy",
       "type": "Drug"
+    },
+    {
+      "id": "RBMX",
+      "type": "Protein"
+    },
+    {
+      "id": "miR-10a-5p",
+      "type": "Gene"
+    },
+    {
+      "id": "\u03b3CaMKII",
+      "type": "Protein"
+    },
+    {
+      "id": "Mitochondrial Dysfunction",
+      "type": "Hallmark"
+    },
+    {
+      "id": "miR-10a-5p Inhibitor",
+      "type": "Drug"
+    },
+    {
+      "id": "Mouse",
+      "type": "Organism"
+    },
+    {
+      "id": "Clonal hematopoiesis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Blood cancers",
+      "type": "Disease"
+    },
+    {
+      "id": "Cardiovascular inflammation",
+      "type": "Disease"
+    },
+    {
+      "id": "Brain shrinkage",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Cortical atrophy",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Hippocampal atrophy",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Amyloid",
+      "type": "Protein"
+    },
+    {
+      "id": "Amnestic Mild Cognitive Impairment",
+      "type": "Disease"
+    },
+    {
+      "id": "Neurodegeneration",
+      "type": "Disease"
+    },
+    {
+      "id": "Diabetes",
+      "type": "Disease"
+    },
+    {
+      "id": "Senolytics",
+      "type": "Drug"
     }
   ],
   "links": [
@@ -615,6 +683,156 @@
       "target": "Aging",
       "label": "inhibits",
       "paper_slug": "editions/2026-09-18/story_2.html"
+    },
+    {
+      "source": "RBMX",
+      "target": "miR-10a-5p",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p",
+      "target": "\u03b3CaMKII",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "\u03b3CaMKII",
+      "target": "Mitochondrial Dysfunction",
+      "label": "prevents",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "Mitochondrial Dysfunction",
+      "target": "cellular senescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Cognitive Decline",
+      "label": "causes",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "miR-10a-5p",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "Mitochondrial Dysfunction",
+      "label": "reverses",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "cellular senescence",
+      "label": "reverses",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitor",
+      "target": "Cognitive Decline",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "Cognitive Decline",
+      "target": "Alzheimer's disease",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_0.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Blood cancers",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Cardiovascular inflammation",
+      "label": "increases",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Brain shrinkage",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Brain shrinkage",
+      "target": "Alzheimer's disease",
+      "label": "mimics",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Clonal hematopoiesis",
+      "target": "Cortical atrophy",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Cortical atrophy",
+      "target": "Alzheimer's disease",
+      "label": "mimics",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Hippocampal atrophy",
+      "target": "Alzheimer's disease",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Amyloid",
+      "target": "Alzheimer's disease",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "tau",
+      "target": "Alzheimer's disease",
+      "label": "associated with",
+      "paper_slug": "editions/2026-09-19/story_1.html"
+    },
+    {
+      "source": "Senolytics",
+      "target": "Cognitive Decline",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "Senolytics",
+      "target": "Neurodegeneration",
+      "label": "treats",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "Amnestic Mild Cognitive Impairment",
+      "target": "Human",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "Cognitive Decline",
+      "target": "Human",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "Neurodegeneration",
+      "target": "Human",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-19/story_2.html"
+    },
+    {
+      "source": "Diabetes",
+      "target": "Human",
+      "label": "affects",
+      "paper_slug": "editions/2026-09-19/story_2.html"
     }
   ]
 }
