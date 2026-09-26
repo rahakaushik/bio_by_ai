@@ -1000,133 +1000,133 @@
       "source": "GLP-1 receptor agonists",
       "target": "Obesity",
       "label": "treats",
-      "paper_slug": "editions/2026-09-25/story_0.html"
+      "paper_slug": "editions/2026-09-26/story_0.html"
     },
     {
       "source": "GLP-1 receptor agonists",
       "target": "Sarcopenia",
       "label": "increases",
-      "paper_slug": "editions/2026-09-25/story_0.html"
+      "paper_slug": "editions/2026-09-26/story_0.html"
     },
     {
       "source": "ASO",
       "target": "ZFP423",
       "label": "inhibits",
-      "paper_slug": "editions/2026-09-25/story_0.html"
+      "paper_slug": "editions/2026-09-26/story_0.html"
     },
     {
       "source": "ASO",
       "target": "Sarcopenia",
       "label": "prevents",
-      "paper_slug": "editions/2026-09-25/story_0.html"
+      "paper_slug": "editions/2026-09-26/story_0.html"
     },
     {
       "source": "ASO",
       "target": "Obesity",
       "label": "treats",
-      "paper_slug": "editions/2026-09-25/story_0.html"
+      "paper_slug": "editions/2026-09-26/story_0.html"
     },
     {
       "source": "Trichinella spiralis",
       "target": "trichinosis",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "Trichinella spiralis",
       "target": "rTs-SPI",
       "label": "secretes",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "rTs-SPI",
       "target": "TIM-3",
       "label": "activates",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "TIM-3",
       "target": "PI3K/AKT/mTOR",
       "label": "activates",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "inflammaging",
       "target": "Obesity",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "inflammaging",
       "target": "type 2 diabetes",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "inflammaging",
       "target": "metabolic dysfunction",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "rTs-SPI",
       "target": "inflammaging",
       "label": "inhibits",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "rTs-SPI",
       "target": "Obesity",
       "label": "treats",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "rTs-SPI",
       "target": "metabolic dysfunction",
       "label": "treats",
-      "paper_slug": "editions/2026-09-25/story_1.html"
+      "paper_slug": "editions/2026-09-26/story_1.html"
     },
     {
       "source": "Yamanaka factors",
       "target": "Cellular rejuvenation",
       "label": "increases",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "Yamanaka factors",
       "target": "Genomic instability",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "Yamanaka factors",
       "target": "Tumors",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "Yamanaka factors",
       "target": "Teratomas",
       "label": "causes",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "lin-15A",
       "target": "Caenorhabditis elegans",
       "label": "expressed in",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "lin-15A",
       "target": "Chromatin-modifying complexes",
       "label": "inhibits",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     },
     {
       "source": "lin-15A",
       "target": "Cellular rejuvenation",
       "label": "increases",
-      "paper_slug": "editions/2026-09-25/story_2.html"
+      "paper_slug": "editions/2026-09-26/story_2.html"
     }
   ]
 }
