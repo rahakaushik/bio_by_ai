@@ -37,7 +37,8 @@ def main():
     from graph_builder import GraphBuilder
     import datetime
     graph_builder = GraphBuilder()
-    today_str = datetime.date.today().strftime("%Y-%m-%d")
+    today_date = datetime.date.today()
+    today_str = today_date.strftime("%Y-%m-%d")
     edition_dir = f"public/editions/{today_str}"
     os.makedirs(f"{edition_dir}/images", exist_ok=True)
     
@@ -64,7 +65,7 @@ def main():
                 paper["image_path"] = f"images/{os.path.basename(saved_path)}"
                 
     publisher = Publisher()
-    publisher.publish(top_papers)
+    publisher.publish(top_papers, today_date=today_date)
     logger.info("Pipeline complete!")
 
 if __name__ == "__main__":

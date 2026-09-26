@@ -15,12 +15,13 @@ class Publisher:
             
         self.env = Environment(loader=FileSystemLoader(self.template_dir))
         
-    def publish(self, papers):
+    def publish(self, papers, today_date=None):
         logger.info("Publishing newsletter...")
         index_template = self.env.get_template("index_template.html")
         story_template = self.env.get_template("story_template.html")
         
-        today_date = datetime.date.today()
+        if today_date is None:
+            today_date = datetime.date.today()
         today_str_display = today_date.strftime("%B %d, %Y")
         today_str_folder = today_date.strftime("%Y-%m-%d")
         
