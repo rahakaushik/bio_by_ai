@@ -387,6 +387,82 @@
     {
       "id": "Cellular rejuvenation",
       "type": "Hallmark"
+    },
+    {
+      "id": "glycosphingolipid clearance enzymes",
+      "type": "Protein"
+    },
+    {
+      "id": "precision therapeutics",
+      "type": "Drug"
+    },
+    {
+      "id": "lysosomal dysfunction",
+      "type": "Hallmark"
+    },
+    {
+      "id": "inflammation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "lysosomal storage disorders",
+      "type": "Disease"
+    },
+    {
+      "id": "DNMT1",
+      "type": "Protein"
+    },
+    {
+      "id": "UHRF1",
+      "type": "Protein"
+    },
+    {
+      "id": "Histones",
+      "type": "Protein"
+    },
+    {
+      "id": "Ubiquitin",
+      "type": "Protein"
+    },
+    {
+      "id": "LGDDSL loop",
+      "type": "Protein"
+    },
+    {
+      "id": "DNA methylation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Epigenetic drift",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Tumor-suppressor genes",
+      "type": "Gene"
+    },
+    {
+      "id": "AZP2006",
+      "type": "Drug"
+    },
+    {
+      "id": "PGRN",
+      "type": "Protein"
+    },
+    {
+      "id": "PSAP",
+      "type": "Protein"
+    },
+    {
+      "id": "alpha-synuclein",
+      "type": "Protein"
+    },
+    {
+      "id": "Parkinson's disease",
+      "type": "Disease"
+    },
+    {
+      "id": "Progressive Supranuclear Palsy",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -1127,6 +1203,174 @@
       "target": "Cellular rejuvenation",
       "label": "increases",
       "paper_slug": "editions/2026-09-26/story_2.html"
+    },
+    {
+      "source": "precision therapeutics",
+      "target": "glycosphingolipid clearance enzymes",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "glycosphingolipid clearance enzymes",
+      "target": "lysosomal dysfunction",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "lysosomal dysfunction",
+      "target": "cellular senescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "inflammation",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "inflammation",
+      "target": "Cognitive Decline",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "lysosomal storage disorders",
+      "target": "Neurodegeneration",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "precision therapeutics",
+      "target": "Cognitive Decline",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-03/story_0.html"
+    },
+    {
+      "source": "UHRF1",
+      "target": "Histones",
+      "label": "tags",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "UHRF1",
+      "target": "Ubiquitin",
+      "label": "deposits",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "LGDDSL loop",
+      "target": "Ubiquitin",
+      "label": "binds",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "LGDDSL loop",
+      "target": "Ubiquitin",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "Ubiquitin",
+      "target": "DNMT1",
+      "label": "recruits",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "DNMT1",
+      "target": "DNA methylation",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "DNA methylation",
+      "target": "Epigenetic drift",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "Epigenetic drift",
+      "target": "Aging",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "Epigenetic drift",
+      "target": "Cancer",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "UHRF1",
+      "target": "Tumor-suppressor genes",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "Tumor-suppressor genes",
+      "target": "Cancer",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-03/story_1.html"
+    },
+    {
+      "source": "AZP2006",
+      "target": "Progressive Supranuclear Palsy",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "AZP2006",
+      "target": "Parkinson's disease",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "AZP2006",
+      "target": "alpha-synuclein",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "AZP2006",
+      "target": "lysosomal dysfunction",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "AZP2006",
+      "target": "Mitochondrial Dysfunction",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "PSAP",
+      "target": "PGRN",
+      "label": "transports",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "PGRN",
+      "target": "lysosomal dysfunction",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "alpha-synuclein",
+      "target": "Parkinson's disease",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "lysosomal dysfunction",
+      "target": "Parkinson's disease",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "lysosomal dysfunction",
+      "target": "brain aging",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-03/story_2.html"
     }
   ]
 }
