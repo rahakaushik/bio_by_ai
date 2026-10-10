@@ -463,6 +463,74 @@
     {
       "id": "Progressive Supranuclear Palsy",
       "type": "Disease"
+    },
+    {
+      "id": "mtDNA Mutations",
+      "type": "Gene"
+    },
+    {
+      "id": "Cellular Exhaustion",
+      "type": "Hallmark"
+    },
+    {
+      "id": "VLPs",
+      "type": "Drug"
+    },
+    {
+      "id": "mRNA",
+      "type": "Gene"
+    },
+    {
+      "id": "mtBEs",
+      "type": "Protein"
+    },
+    {
+      "id": "Hereditary Blindness",
+      "type": "Disease"
+    },
+    {
+      "id": "Systemic Metabolic Diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "6S-NP",
+      "type": "Drug"
+    },
+    {
+      "id": "Hyaluronic acid",
+      "type": "Drug"
+    },
+    {
+      "id": "IL-6",
+      "type": "Protein"
+    },
+    {
+      "id": "IL-1\u03b2",
+      "type": "Protein"
+    },
+    {
+      "id": "Osteoarthritis",
+      "type": "Disease"
+    },
+    {
+      "id": "HIF",
+      "type": "Protein"
+    },
+    {
+      "id": "Hypoxia pill",
+      "type": "Drug"
+    },
+    {
+      "id": "Oxidative stress",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Stroke",
+      "type": "Disease"
+    },
+    {
+      "id": "Cardiovascular events",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -1371,6 +1439,144 @@
       "target": "brain aging",
       "label": "causes",
       "paper_slug": "editions/2026-10-03/story_2.html"
+    },
+    {
+      "source": "mtDNA Mutations",
+      "target": "Cellular Exhaustion",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "Cellular Exhaustion",
+      "target": "Aging",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "VLPs",
+      "target": "mRNA",
+      "label": "delivers",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "mRNA",
+      "target": "mtBEs",
+      "label": "encodes",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "mtBEs",
+      "target": "mtDNA Mutations",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "mtBEs",
+      "target": "Hereditary Blindness",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "mtBEs",
+      "target": "Systemic Metabolic Diseases",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_0.html"
+    },
+    {
+      "source": "6S-NP",
+      "target": "Osteoarthritis",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "Hyaluronic acid",
+      "target": "Osteoarthritis",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "6S-NP",
+      "target": "IL-6",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "6S-NP",
+      "target": "IL-1\u03b2",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "6S-NP",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Osteoarthritis",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-10/story_1.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "HIF",
+      "label": "stabilizes",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "HIF",
+      "target": "Oxidative stress",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "Neurodegeneration",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "Alzheimer's disease",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "Parkinson's disease",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "Cognitive Decline",
+      "label": "reverses",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "Hypoxia pill",
+      "target": "mice",
+      "label": "tested in",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "HIF",
+      "target": "Stroke",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "HIF",
+      "target": "Cardiovascular events",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "HIF",
+      "target": "Cancer",
+      "label": "promotes",
+      "paper_slug": "editions/2026-10-10/story_2.html"
     }
   ]
 }
