@@ -15,6 +15,22 @@ class ResearchFetcher:
         self.start_date = self.end_date - relativedelta(days=self.days_back)
         self.keywords = ["longevity", "aging", "healthspan", "senescence", "lifespan", "rejuvenation"]
     
+    @staticmethod
+    def _extract_abstract_from_article(article):
+        abstract_elems = article.findall(".//AbstractText")
+        if not abstract_elems:
+            return ""
+        parts = []
+        for elem in abstract_elems:
+            label = elem.get("Label") or elem.get("label")
+            text = "".join(elem.itertext()).strip()
+            if text:
+                if label:
+                    parts.append(f"{label}: {text}")
+                else:
+                    parts.append(text)
+        return "\n\n".join(parts) if parts else ""
+
     def fetch_pubmed(self):
         logger.info("Fetching from PubMed...")
         # Build NCBI eSearch query
@@ -55,8 +71,7 @@ class ResearchFetcher:
                 pmid = article.find(".//PMID").text
                 title = article.find(".//ArticleTitle").text
                 
-                abstract_elem = article.find(".//AbstractText")
-                abstract = abstract_elem.text if abstract_elem is not None else ""
+                abstract = self._extract_abstract_from_article(article)
                 if not abstract:
                     continue # Skip papers without abstracts
                     
@@ -283,8 +298,7 @@ class ResearchFetcher:
                                     for article in root.findall(".//PubmedArticle"):
                                         pmid = article.find(".//PMID").text
                                         title = article.find(".//ArticleTitle").text
-                                        abstract_elem = article.find(".//AbstractText")
-                                        pubmed_abstract = abstract_elem.text if abstract_elem is not None else ""
+                                        pubmed_abstract = self._extract_abstract_from_article(article)
                                         
                                         # Combine the original news context with the primary paper context
                                         final_title = title
@@ -325,8 +339,7 @@ class ResearchFetcher:
                     pmid = article.find(".//PMID").text
                     title = article.find(".//ArticleTitle").text
                     
-                    abstract_elem = article.find(".//AbstractText")
-                    abstract = abstract_elem.text if abstract_elem is not None else "No abstract provided."
+                    abstract = self._extract_abstract_from_article(article) or "No abstract provided."
                     journal = article.find(".//Title").text
                     
                     papers.append({

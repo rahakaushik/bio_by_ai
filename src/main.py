@@ -64,6 +64,11 @@ def main():
                 # Store the relative path from the edition directory
                 paper["image_path"] = f"images/{os.path.basename(saved_path)}"
                 
+        # Space out API requests between stories to respect rate limits
+        if i < len(top_papers) - 1:
+            logger.info("Pacing API calls: sleeping 10 seconds before next paper...")
+            time.sleep(10)
+                
     publisher = Publisher()
     publisher.publish(top_papers, today_date=today_date)
     logger.info("Pipeline complete!")

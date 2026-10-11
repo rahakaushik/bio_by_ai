@@ -46,18 +46,46 @@ class AIArtist:
             logger.warning("No Gemini API key provided. Skipping image generation.")
             return None
             
-        logger.info(f"Generating image with prompt: {prompt}")
-        
-        try:
-            result = self.client.models.generate_content(
-                model='gemini-3.1-flash-image',
-                contents=prompt
-            )
-            
-            image_bytes = result.candidates[0].content.parts[0].inline_data.data
-            with open(output_filename, "wb") as f:
-                f.write(image_bytes)
-            return output_filename
-        except Exception as e:
-            logger.error(f"Error generating image via Google Imagen: {e}")
-            return None
+        max_attempts = 3
+        current_prompt = prompt
+        fallback_prompt = "Clean, modern scientific infographic, flat vector style, data visualization, educational diagram, high-quality, text-free, cellular biology, molecular signaling pathway, medical research diagram."
+
+        for attempt in range(1, max_attempts + 1):
+            logger.info(f"Generating image (attempt {attempt}/{max_attempts}) with prompt: {current_prompt[:100]}...")
+            try:
+                result = self.client.models.generate_content(
+                    model='gemini-3.1-flash-image',
+                    contents=current_prompt
+                )
+                
+                image_bytes = None
+                if result and result.candidates:
+                    candidate = result.candidates[0]
+                    if candidate.content and candidate.content.parts:
+                        for part in candidate.content.parts:
+                            if hasattr(part, 'inline_data') and part.inline_data:
+                                image_bytes = part.inline_data.data
+                                break
+                                
+                if image_bytes:
+                    os.makedirs(os.path.dirname(output_filename), exist_ok=True)
+                    with open(output_filename, "wb") as f:
+                        f.write(image_bytes)
+                    logger.info(f"Successfully generated and saved image to {output_filename}")
+                    return output_filename
+                else:
+                    logger.warning(f"Attempt {attempt}: No inline image data in response candidates.")
+            except Exception as e:
+                logger.error(f"Attempt {attempt} failed generating image: {e}")
+                
+            if attempt < max_attempts:
+                # Wait before retry to clear rate limits (e.g. 20s, 40s)
+                sleep_secs = 20 * attempt
+                logger.info(f"Sleeping for {sleep_secs}s before image retry...")
+                time.sleep(sleep_secs)
+                # On final retry, switch to sanitized fallback prompt in case content policy triggered
+                if attempt == max_attempts - 1:
+                    current_prompt = fallback_prompt
+                    
+        logger.error(f"Failed to generate image after {max_attempts} attempts.")
+        return None

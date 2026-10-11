@@ -28,21 +28,36 @@ class AIWriter:
                     kg = json.load(f)
                     
                 combined_text = (paper['title'] + " " + paper['abstract']).lower()
+                generic_stopwords = {"mouse", "mice", "rat", "rats", "human", "humans", "cell", "cells", "model", "models", "patient", "patients", "study", "studies", "organism", "unknown"}
                 matched_nodes = []
                 for node in kg.get("nodes", []):
                     node_id = node.get("id", "")
-                    if len(node_id) > 2 and re.search(r'\b' + re.escape(node_id.lower()) + r'\b', combined_text):
+                    if len(node_id) > 2 and node_id.lower() not in generic_stopwords and re.search(r'\b' + re.escape(node_id.lower()) + r'\b', combined_text):
                         matched_nodes.append(node_id.lower())
                         
+                relevant_links = []
                 if matched_nodes:
-                    relevant_links = []
                     for link in kg.get("links", []):
                         if link.get("source", "").lower() in matched_nodes or link.get("target", "").lower() in matched_nodes:
                             relevant_links.append(f"- {link['source']} {link['label']} {link['target']}")
                             
-                    if relevant_links:
-                        relevant_links = list(set(relevant_links))[:15]
-                        kg_context = "\n--- HISTORICAL KNOWLEDGE GRAPH INSIGHTS (from past newsletters) ---\n" + "\n".join(relevant_links)
+                if relevant_links:
+                    relevant_links = list(set(relevant_links))[:15]
+                    kg_context = "\n--- HISTORICAL KNOWLEDGE GRAPH INSIGHTS (from past newsletters) ---\n" + "\n".join(relevant_links)
+                elif kg.get("links"):
+                    # Fallback to key hubs in the Knowledge Graph to contextualize against broader longevity pillars
+                    node_degrees = {}
+                    for link in kg.get("links", []):
+                        s, t = link.get("source"), link.get("target")
+                        node_degrees[s] = node_degrees.get(s, 0) + 1
+                        node_degrees[t] = node_degrees.get(t, 0) + 1
+                    top_hubs = {h[0] for h in sorted(node_degrees.items(), key=lambda x: x[1], reverse=True)[:5]}
+                    hub_links = []
+                    for link in kg.get("links", []):
+                        if link.get("source") in top_hubs or link.get("target") in top_hubs:
+                            hub_links.append(f"- {link['source']} {link['label']} {link['target']}")
+                    if hub_links:
+                        kg_context = "\n--- BROADER LONGEVITY KNOWLEDGE GRAPH CONTEXT (key hallmarks to connect to) ---\n" + "\n".join(list(set(hub_links))[:10])
             except Exception as e:
                 logger.warning(f"Failed to load KG for context: {e}")
                 
@@ -75,7 +90,7 @@ class AIWriter:
         - "headline": Catchy but accurate headline.
         - "why_it_matters": A 1-2 sentence summary of why investors/scientists should care.
         - "html_body": The HTML formatted story (using <p>, <strong>, <em>, <ul> etc.). Write 4-5 paragraphs. The final paragraph MUST be the critical analysis of the limitations and challenges ahead. Include the inline citations here if needed.
-        - "kg_insights": A generated HTML paragraph starting exactly with '<strong>Insights from Longevity KG:</strong> '. If HISTORICAL KNOWLEDGE GRAPH INSIGHTS were provided above, you MUST write this paragraph connecting the past findings to this new paper. If absolutely NO historical insights were provided, return an empty string "".
+        - "kg_insights": A generated HTML paragraph starting exactly with '<strong>Insights from Longevity KG:</strong> '. Connect the findings of this paper to the Knowledge Graph insights or broader longevity pillars provided above (e.g. how it intersects with mitochondrial health, senescence, cellular resilience, or metabolic aging). You MUST always generate this paragraph.
         - "citations": An HTML formatted list of citations supporting the claims (e.g. <li>...</li>). Include both the primary paper and the original news source if applicable.
         """
         
