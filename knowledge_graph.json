@@ -531,6 +531,98 @@
     {
       "id": "Cardiovascular events",
       "type": "Disease"
+    },
+    {
+      "id": "Alzheimer's",
+      "type": "Disease"
+    },
+    {
+      "id": "HLA class II",
+      "type": "Gene"
+    },
+    {
+      "id": "Hap-B",
+      "type": "Gene"
+    },
+    {
+      "id": "DRB1*04",
+      "type": "Gene"
+    },
+    {
+      "id": "Hap-R",
+      "type": "Gene"
+    },
+    {
+      "id": "DRB1*01:01",
+      "type": "Gene"
+    },
+    {
+      "id": "Hap-Y",
+      "type": "Gene"
+    },
+    {
+      "id": "DRB1*15:01",
+      "type": "Gene"
+    },
+    {
+      "id": "tau pathology",
+      "type": "Hallmark"
+    },
+    {
+      "id": "healthy longevity",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Mitochondrial Decay",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Protein Misfolding",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Green Fluorescent Protein",
+      "type": "Protein"
+    },
+    {
+      "id": "JF657",
+      "type": "Drug"
+    },
+    {
+      "id": "JF596",
+      "type": "Drug"
+    },
+    {
+      "id": "JF494",
+      "type": "Drug"
+    },
+    {
+      "id": "Janelia Fluor Dyes",
+      "type": "Drug"
+    },
+    {
+      "id": "ETS",
+      "type": "Protein"
+    },
+    {
+      "id": "Mef2",
+      "type": "Protein"
+    },
+    {
+      "id": "Mitochondrial Function",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Angiogenesis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Oncogenesis",
+      "type": "Disease"
+    },
+    {
+      "id": "Rat",
+      "type": "Organism"
     }
   ],
   "links": [
@@ -1577,6 +1669,102 @@
       "target": "Cancer",
       "label": "promotes",
       "paper_slug": "editions/2026-10-10/story_2.html"
+    },
+    {
+      "source": "APOE",
+      "target": "Alzheimer's",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-B",
+      "target": "DRB1*04",
+      "label": "enriched with",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-B",
+      "target": "tau pathology",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-R",
+      "target": "DRB1*01:01",
+      "label": "corresponds to",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-R",
+      "target": "Alzheimer's",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-R",
+      "target": "healthy longevity",
+      "label": "decreases",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Hap-Y",
+      "target": "DRB1*15:01",
+      "label": "corresponds to",
+      "paper_slug": "editions/2026-10-16/story_0.html"
+    },
+    {
+      "source": "Senolytics",
+      "target": "cellular senescence",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-16/story_1.html"
+    },
+    {
+      "source": "JF657",
+      "target": "Janelia Fluor Dyes",
+      "label": "is type of",
+      "paper_slug": "editions/2026-10-16/story_1.html"
+    },
+    {
+      "source": "JF596",
+      "target": "Janelia Fluor Dyes",
+      "label": "is type of",
+      "paper_slug": "editions/2026-10-16/story_1.html"
+    },
+    {
+      "source": "JF494",
+      "target": "Janelia Fluor Dyes",
+      "label": "is type of",
+      "paper_slug": "editions/2026-10-16/story_1.html"
+    },
+    {
+      "source": "ETS",
+      "target": "Mitochondrial Function",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-16/story_2.html"
+    },
+    {
+      "source": "ETS",
+      "target": "Angiogenesis",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-16/story_2.html"
+    },
+    {
+      "source": "Mef2",
+      "target": "Mitochondrial Function",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-16/story_2.html"
+    },
+    {
+      "source": "Mef2",
+      "target": "Angiogenesis",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-16/story_2.html"
+    },
+    {
+      "source": "ETS",
+      "target": "Oncogenesis",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-16/story_2.html"
     }
   ]
 }
