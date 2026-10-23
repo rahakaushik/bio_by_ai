@@ -623,6 +623,82 @@
     {
       "id": "Rat",
       "type": "Organism"
+    },
+    {
+      "id": "miR-10a-5p Inhibitors",
+      "type": "Drug"
+    },
+    {
+      "id": "Neuroinflammation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Inflammatory Cytokines",
+      "type": "Protein"
+    },
+    {
+      "id": "Chemotherapy",
+      "type": "Drug"
+    },
+    {
+      "id": "Therapy-Induced Senescence",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Fas",
+      "type": "Protein"
+    },
+    {
+      "id": "TRAIL-R2",
+      "type": "Protein"
+    },
+    {
+      "id": "FADDosome",
+      "type": "Protein"
+    },
+    {
+      "id": "RIPK1",
+      "type": "Protein"
+    },
+    {
+      "id": "FADD",
+      "type": "Protein"
+    },
+    {
+      "id": "Caspase-8",
+      "type": "Protein"
+    },
+    {
+      "id": "cIAP-2",
+      "type": "Protein"
+    },
+    {
+      "id": "IAP Antagonists",
+      "type": "Drug"
+    },
+    {
+      "id": "Apoptosis",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Vascular Aging",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Chronic Low-Grade Inflammation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Endothelial Strain",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Extracellular Matrix Remodeling",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Subclinical Atherosclerosis",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -1765,6 +1841,144 @@
       "target": "Oncogenesis",
       "label": "causes",
       "paper_slug": "editions/2026-10-16/story_2.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitors",
+      "target": "miR-10a-5p",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-23/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p",
+      "target": "Neuroinflammation",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-23/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p",
+      "target": "cellular senescence",
+      "label": "promotes",
+      "paper_slug": "editions/2026-10-23/story_0.html"
+    },
+    {
+      "source": "miR-10a-5p Inhibitors",
+      "target": "Inflammatory Cytokines",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-23/story_0.html"
+    },
+    {
+      "source": "Neuroinflammation",
+      "target": "Alzheimer's disease",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-23/story_0.html"
+    },
+    {
+      "source": "Chemotherapy",
+      "target": "Therapy-Induced Senescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Therapy-Induced Senescence",
+      "target": "Cancer",
+      "label": "increases risk of",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Therapy-Induced Senescence",
+      "target": "Aging",
+      "label": "accelerates",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Therapy-Induced Senescence",
+      "target": "Fas",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Therapy-Induced Senescence",
+      "target": "TRAIL-R2",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Therapy-Induced Senescence",
+      "target": "cIAP-2",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "RIPK1",
+      "target": "FADDosome",
+      "label": "component of",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "FADD",
+      "target": "FADDosome",
+      "label": "component of",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Caspase-8",
+      "target": "FADDosome",
+      "label": "component of",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "IAP Antagonists",
+      "target": "cIAP-2",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "cIAP-2",
+      "target": "FADDosome",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "FADDosome",
+      "target": "Caspase-8",
+      "label": "activates",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Caspase-8",
+      "target": "Apoptosis",
+      "label": "triggers",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "IAP Antagonists",
+      "target": "Therapy-Induced Senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-23/story_1.html"
+    },
+    {
+      "source": "Chronic Low-Grade Inflammation",
+      "target": "Vascular Aging",
+      "label": "drives",
+      "paper_slug": "editions/2026-10-23/story_2.html"
+    },
+    {
+      "source": "Endothelial Strain",
+      "target": "Vascular Aging",
+      "label": "drives",
+      "paper_slug": "editions/2026-10-23/story_2.html"
+    },
+    {
+      "source": "Extracellular Matrix Remodeling",
+      "target": "Vascular Aging",
+      "label": "drives",
+      "paper_slug": "editions/2026-10-23/story_2.html"
+    },
+    {
+      "source": "Subclinical Atherosclerosis",
+      "target": "Cardiovascular events",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-23/story_2.html"
     }
   ]
 }
