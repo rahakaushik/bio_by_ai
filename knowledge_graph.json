@@ -699,6 +699,70 @@
     {
       "id": "Subclinical Atherosclerosis",
       "type": "Disease"
+    },
+    {
+      "id": "Heart Disease",
+      "type": "Disease"
+    },
+    {
+      "id": "Dyslipidemia",
+      "type": "Disease"
+    },
+    {
+      "id": "Microvascular Damage",
+      "type": "Disease"
+    },
+    {
+      "id": "Fibrosis",
+      "type": "Disease"
+    },
+    {
+      "id": "Liver Fibrosis",
+      "type": "Disease"
+    },
+    {
+      "id": "Lung Fibrosis",
+      "type": "Disease"
+    },
+    {
+      "id": "P-selectin",
+      "type": "Protein"
+    },
+    {
+      "id": "SMNPs",
+      "type": "Drug"
+    },
+    {
+      "id": "T-cell Immunotherapies",
+      "type": "Drug"
+    },
+    {
+      "id": "Biological Aging",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Bioenergetic Decay",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Heart Failure",
+      "type": "Disease"
+    },
+    {
+      "id": "Muscle Wasting",
+      "type": "Disease"
+    },
+    {
+      "id": "Cellular Adhesion Molecules",
+      "type": "Protein"
+    },
+    {
+      "id": "Cell Death",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Mitochondria",
+      "type": "Drug"
     }
   ],
   "links": [
@@ -1979,6 +2043,102 @@
       "target": "Cardiovascular events",
       "label": "causes",
       "paper_slug": "editions/2026-10-23/story_2.html"
+    },
+    {
+      "source": "Mitochondrial Dysfunction",
+      "target": "Sarcopenia",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_0.html"
+    },
+    {
+      "source": "Chronic Low-Grade Inflammation",
+      "target": "Sarcopenia",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Cancer",
+      "label": "prevents",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "Senolytics",
+      "target": "Fibrosis",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "SMNPs",
+      "target": "P-selectin",
+      "label": "targets",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "SMNPs",
+      "target": "Liver Fibrosis",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "SMNPs",
+      "target": "Lung Fibrosis",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "SMNPs",
+      "target": "T-cell Immunotherapies",
+      "label": "enhances",
+      "paper_slug": "editions/2026-10-31/story_1.html"
+    },
+    {
+      "source": "Biological Aging",
+      "target": "Bioenergetic Decay",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Bioenergetic Decay",
+      "target": "Heart Failure",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Bioenergetic Decay",
+      "target": "Muscle Wasting",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Bioenergetic Decay",
+      "target": "Neurodegeneration",
+      "label": "causes",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Cellular Adhesion Molecules",
+      "target": "Mitochondria",
+      "label": "increases",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Mitochondria",
+      "target": "Cell Death",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Mitochondria",
+      "target": "inflammation",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "Mitochondria",
+      "target": "Bioenergetic Decay",
+      "label": "treats",
+      "paper_slug": "editions/2026-10-31/story_2.html"
     }
   ]
 }
