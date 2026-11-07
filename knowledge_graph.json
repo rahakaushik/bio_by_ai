@@ -763,6 +763,70 @@
     {
       "id": "Mitochondria",
       "type": "Drug"
+    },
+    {
+      "id": "NAD+",
+      "type": "Drug"
+    },
+    {
+      "id": "N-MNA",
+      "type": "Drug"
+    },
+    {
+      "id": "NMN",
+      "type": "Drug"
+    },
+    {
+      "id": "NR",
+      "type": "Drug"
+    },
+    {
+      "id": "SIRT1",
+      "type": "Protein"
+    },
+    {
+      "id": "Gut Dysbiosis",
+      "type": "Disease"
+    },
+    {
+      "id": "Inflammatory Diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "Chronic Systemic Inflammation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Biological Age Uncertainty",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Systemic Inflammation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Metabolic Dysregulation",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Tissue Remodeling",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Frailty",
+      "type": "Disease"
+    },
+    {
+      "id": "Cardiometabolic Diseases",
+      "type": "Disease"
+    },
+    {
+      "id": "Multimorbidity",
+      "type": "Disease"
+    },
+    {
+      "id": "All-Cause Mortality",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -2139,6 +2203,138 @@
       "target": "Bioenergetic Decay",
       "label": "treats",
       "paper_slug": "editions/2026-10-31/story_2.html"
+    },
+    {
+      "source": "APOE4",
+      "target": "tau",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "tau",
+      "label": "decreases",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "Neuroinflammation",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "APOE2",
+      "target": "Cortical atrophy",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "tau",
+      "target": "cellular senescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Neuroinflammation",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-07/story_0.html"
+    },
+    {
+      "source": "Aging",
+      "target": "NAD+",
+      "label": "decreases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "N-MNA",
+      "target": "NAD+",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "NMN",
+      "target": "NAD+",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "NR",
+      "target": "NAD+",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "N-MNA",
+      "target": "SIRT1",
+      "label": "activates",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "Gut Dysbiosis",
+      "target": "N-MNA",
+      "label": "decreases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "Inflammatory Diseases",
+      "target": "N-MNA",
+      "label": "decreases",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "N-MNA",
+      "target": "Chronic Systemic Inflammation",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-07/story_1.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Systemic Inflammation",
+      "label": "associated with",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Metabolic Dysregulation",
+      "label": "associated with",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Tissue Remodeling",
+      "label": "associated with",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Frailty",
+      "label": "associated with",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Cardiometabolic Diseases",
+      "label": "associated with",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "Multimorbidity",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Biological Age Uncertainty",
+      "target": "All-Cause Mortality",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-07/story_2.html"
     }
   ]
 }
