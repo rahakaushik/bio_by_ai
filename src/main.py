@@ -40,13 +40,13 @@ def main():
     today_date = datetime.date.today()
     today_str = today_date.strftime("%Y-%m-%d")
     edition_dir = f"public/editions/{today_str}"
-    os.makedirs(f"{edition_dir}/images", exist_ok=True)
     
     for i, paper in enumerate(top_papers):
         logger.info(f"Writing story for: {paper['title']}")
         paper = writer.write_story(paper)
         
         if "story" in paper:
+            os.makedirs(f"{edition_dir}/images", exist_ok=True)
             headline = paper["story"].get("headline", "")
             body = paper["story"].get("html_body", "")
             
@@ -68,9 +68,14 @@ def main():
         if i < len(top_papers) - 1:
             logger.info("Pacing API calls: sleeping 10 seconds before next paper...")
             time.sleep(10)
+            
+    valid_papers = [p for p in top_papers if "story" in p]
+    if not valid_papers:
+        logger.error("CRITICAL: Zero stories were generated (check Gemini API billing/credits). Aborting publish to protect the live site.")
+        sys.exit(1)
                 
     publisher = Publisher()
-    publisher.publish(top_papers, today_date=today_date)
+    publisher.publish(valid_papers, today_date=today_date)
     logger.info("Pipeline complete!")
 
 if __name__ == "__main__":
