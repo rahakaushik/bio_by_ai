@@ -827,6 +827,50 @@
     {
       "id": "All-Cause Mortality",
       "type": "Disease"
+    },
+    {
+      "id": "Metabolic Decay",
+      "type": "Disease"
+    },
+    {
+      "id": "Pt/CeO2 Nanozyme",
+      "type": "Drug"
+    },
+    {
+      "id": "Platinum",
+      "type": "Drug"
+    },
+    {
+      "id": "Cerium Oxide",
+      "type": "Drug"
+    },
+    {
+      "id": "ROS",
+      "type": "Drug"
+    },
+    {
+      "id": "NADH",
+      "type": "Drug"
+    },
+    {
+      "id": "Osteoporosis",
+      "type": "Disease"
+    },
+    {
+      "id": "Fcgr2b",
+      "type": "Gene"
+    },
+    {
+      "id": "Fc\u03b3RIIb",
+      "type": "Protein"
+    },
+    {
+      "id": "T Cell Exhaustion",
+      "type": "Hallmark"
+    },
+    {
+      "id": "Autoimmunity",
+      "type": "Disease"
     }
   ],
   "links": [
@@ -2335,6 +2379,126 @@
       "target": "All-Cause Mortality",
       "label": "increases",
       "paper_slug": "editions/2026-11-07/story_2.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "inflammaging",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_0.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "neurodegenerative disease",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_0.html"
+    },
+    {
+      "source": "Immunosenescence",
+      "target": "Metabolic Decay",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_0.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Cancer",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_0.html"
+    },
+    {
+      "source": "Pt/CeO2 Nanozyme",
+      "target": "Osteoporosis",
+      "label": "treats",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Pt/CeO2 Nanozyme",
+      "target": "Oxidative stress",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Pt/CeO2 Nanozyme",
+      "target": "cellular senescence",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Pt/CeO2 Nanozyme",
+      "target": "Mitochondrial Decay",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Cerium Oxide",
+      "target": "ROS",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Platinum",
+      "target": "NADH",
+      "label": "decreases",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Platinum",
+      "target": "NAD+",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Oxidative stress",
+      "target": "Osteoporosis",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "cellular senescence",
+      "target": "Osteoporosis",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_1.html"
+    },
+    {
+      "source": "Fcgr2b",
+      "target": "Fc\u03b3RIIb",
+      "label": "encodes",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Aging",
+      "target": "cellular senescence",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Aging",
+      "target": "T Cell Exhaustion",
+      "label": "increases",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Aging",
+      "target": "Immunosenescence",
+      "label": "causes",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Fc\u03b3RIIb",
+      "target": "Immunosenescence",
+      "label": "promotes",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Fc\u03b3RIIb",
+      "target": "Autoimmunity",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_2.html"
+    },
+    {
+      "source": "Fc\u03b3RIIb",
+      "target": "Hyper-inflammation",
+      "label": "inhibits",
+      "paper_slug": "editions/2026-11-21/story_2.html"
     }
   ]
 }
